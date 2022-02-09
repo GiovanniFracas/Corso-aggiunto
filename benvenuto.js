@@ -15,10 +15,10 @@ $(() => {
 
     // corsi esempio
     let nome = localStorage.getItem('nome')
-    $('#benvenuto').html('<h2> Bevenuto ' + nome + '</h2>');
-    $('#corsoEsempio').append('<p class="px-3">' + primoCorso.nome + ' ' + primoCorso.durata + ' ' + primoCorso.materie + '</p> ');
-    $('#corsoEsempio').append('<p class="px-3">' + secondoCorso.nome + ' ' + secondoCorso.durata + ' ' + secondoCorso.materie + '</p> ');
-    $('#corsoEsempio').append('<p class="px-3">' + terzoCorso.nome + ' ' + terzoCorso.durata + ' ' + terzoCorso.materie + '</p> ');
+    $('#benvenuto').html('<h1> Bevenuto ' + nome + '</h1>');
+    $('#corsoEsempio').append('<p class="p-3 card">' + primoCorso.nome + ' ' + primoCorso.durata + ' ' + primoCorso.materie + '</p> ');
+    $('#corsoEsempio').append('<p class="p-3 card">' + secondoCorso.nome + ' ' + secondoCorso.durata + ' ' + secondoCorso.materie + '</p> ');
+    $('#corsoEsempio').append('<p class="p-3 card">' + terzoCorso.nome + ' ' + terzoCorso.durata + ' ' + terzoCorso.materie + '</p> ');
 
 
     // corsi veri
@@ -29,8 +29,8 @@ $(() => {
 
   
     if (corsoVeroNome != null && corsoVeroDurata != null && corsoVeroMaterie != null) {
-        $('#creazione').html('<h1 id="creazione">Corso creato da' + nome + ' </h1> ');
-        $('#creazione').append('<p>' + corsoVeroNome + ' ' + corsoVeroDurata + ' ' + corsoVeroMaterie + ' ' + '</p>')
+        $('#creazione').html('<h1 id="creazione">Corso creato da ' + nome + ' </h1> ');
+        $('#creazione').append('<p class="p-3 card">' + corsoVeroNome + ' ' + corsoVeroDurata + ' ' + corsoVeroMaterie + ' ' + '</p>')
 
     }
 
@@ -67,17 +67,18 @@ $(() => {
         if (materia1 == '' || materia2 == '' || materia3 == '') {
             conteggio++;
         }
-        if (conteggio > 2) {
+        if (conteggio > 1) {
             window.alert('inserisci almeno una materia');
             conteggio = 0;
         }
-        if (materia1 == materia2 || materia1 == materia3 || materia2 == materia3) {
+        if (materia1 == materia2 !='' || materia1 == materia3 !='' || materia2 == materia3!='' ) {
             let temp = localStorage.getItem('nome');
             window.alert('inserisci materie diverse')
             localStorage.clear();
             localStorage.setItem('nome', temp);
             mUguali=true;
         }
+        
     })
 
 
@@ -97,7 +98,7 @@ class Corso {
     materie = [];
     constructor(_nome, _durata, _materie) {
         this.nome ='Il corso: '+ _nome+' ';
-        this.durata ='dura: '+ _durata+' ';
+        this.durata ='dura: '+ _durata+' mesi ';
         this.materie ='e le materie sono: '+ _materie;
     }
 }
