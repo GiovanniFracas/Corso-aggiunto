@@ -9,22 +9,16 @@ $(() => {
 
         if (nome == '' || password == '' || email == '') {
             alert('Compila i campi richiesti')
-
         } else if (!ValidateEmail(email)) {
             alert('Inserisci una mail valida')
         } 
-
         else if (!validatePassword(password)) {
             alert('Inserisci almeno 6 caratteri e un numero')
-
-
         } else {
             $("#login").addClass('disabled');
             $('.bar').append('<div class="in"></div>');
             setTimeout("location.href = 'corsi.html';", 5000);
             localStorage.setItem('nome', nome);
-   
-
         }
     })
     function ValidateEmail(mail) {

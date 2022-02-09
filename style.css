@@ -16,7 +16,7 @@ label{
 }
 #log-input{
     /* background-color:rgb(190, 189, 91); */
-    background-color: rgb(100, 100, 100);
+    /*background-color: rgb(100, 100, 100);*/
     border-radius: 30px;
     padding: 5%;
     border: 2px solid black;
@@ -42,7 +42,7 @@ html,body{
   .in {
     animation: fill 5s linear 1;
     height: 100%;
-    background-color: pink;
+    background-color: rgb(126, 126, 126);
     
   }
   @keyframes fill {
